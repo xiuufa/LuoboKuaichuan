@@ -1,0 +1,3 @@
+cf70b8bcffc871bc05d72ffc417fd24169d05f475c4f3082a5dffeced978082e  萝卜快传-1.0.0.apk
+77af328b3cdebe3221f047238ea348de3d75a0be20eb25d70e6986cf6bc5dfde  萝卜快传-1.0.0-windows-x64.zip
+0f94ce9e96d882d4ce0134bab13c5e92d7ee45b9ad13d3fc10cc68c13db2c582  萝卜快传-1.0.0-linux-x86_64.AppImage

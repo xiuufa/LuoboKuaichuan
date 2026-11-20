@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0F6B5C">
+  <title>萝卜快传</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-text">
+      <h1>萝卜快传</h1>
+      <p id="brandSub">局域网共享传输板</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <span id="connState" class="pill">连接中…</span>
+    <button id="btnShutdown" class="icon-btn power hidden" title="退出服务" aria-label="退出服务">⏻</button>
+    <button id="btnRefresh" class="icon-btn" title="刷新" aria-label="刷新">⟳</button>
+  </div>
+</header>
+
+<main class="page">
+  <section class="panel share-panel">
+    <div class="panel-head">
+      <h2>本机共享</h2>
+      <span id="deviceName" class="muted"></span>
+    </div>
+    <div class="share-body">
+      <div class="qr-wrap">
+        <img id="qrImage" alt="扫码加入传输板">
+      </div>
+      <div class="share-info">
+        <p class="muted">同一 WiFi / 热点下的设备，扫码或用浏览器打开：</p>
+        <div class="url-row">
+          <code id="serverUrl">—</code>
+          <button id="btnCopyUrl" class="btn ghost">复制</button>
+        </div>
+        <p class="hint" id="storageHint"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel board-panel">
+    <div class="panel-head">
+      <h2>传输板 <span id="itemCount" class="count">0</span></h2>
+      <button id="btnClearBoard" class="link-btn danger">清空</button>
+    </div>
+    <div id="boardList" class="board-list"></div>
+    <div id="boardEmpty" class="empty">
+      <p>还没有内容</p>
+      <p class="muted">发送文本或文件后，其它设备会同步看到。</p>
+    </div>
+  </section>
+</main>
+
+<div class="composer-dock">
+  <div class="composer-dock-inner">
+    <div id="dropzone" class="dropzone">
+      <span class="dropzone-icon">⇣</span>
+      <span class="dropzone-text">把文件拖到页面任意位置上传</span>
+    </div>
+    <div class="composer" id="composer">
+      <textarea id="textInput" rows="2" placeholder="输入要发送的文本，Enter 发送，Shift+Enter 换行…"></textarea>
+      <div class="composer-bar">
+        <div class="composer-tools">
+          <label class="tool-btn file-label" title="选择文件发送">
+            <span class="tool-icon">＋</span><span>文件</span>
+            <input id="fileInput" type="file" multiple hidden>
+          </label>
+          <button id="btnClipboard" class="tool-btn" title="发送剪贴板内容">剪贴板</button>
+        </div>
+        <button id="btnSendText" class="send-btn" title="发送" aria-label="发送">↑</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <h3 id="modalTitle">确认</h3>
+    <p id="modalMessage"></p>
+    <div class="modal-actions">
+      <button id="modalCancel" class="btn ghost">取消</button>
+      <button id="modalConfirm" class="btn danger">删除</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

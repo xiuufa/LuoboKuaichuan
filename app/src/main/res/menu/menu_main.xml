@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 右上角「+」：扫一扫 / 选择文件 / 发送剪贴板 / 设置 / 帮助 … -->
+    <item
+        android:id="@+id/action_plus"
+        android:icon="@drawable/ic_add"
+        android:title="@string/action_scan"
+        app:showAsAction="always" />
+</menu>

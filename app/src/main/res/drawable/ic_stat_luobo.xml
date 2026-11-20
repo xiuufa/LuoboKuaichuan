@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 通知栏小图标：与 lobo 图标同款的白萝卜剪影（单色，系统按 alpha 渲染） -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,42 C48,31 40,27 32,29 C37,34 42,38 49,42 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,42 C60,31 68,27 76,29 C71,34 66,38 59,42 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,44 C52,33 55,25 62,21 C63,29 61,38 58,45 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,44 C41,44 34,54 34,66 C34,79 43,88 54,88 C65,88 74,79 74,66 C74,54 67,44 54,44 Z" />
+</vector>

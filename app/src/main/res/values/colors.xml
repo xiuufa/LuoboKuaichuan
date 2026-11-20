@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 萝卜快传品牌色：萝卜橙 -->
+    <color name="luobo_primary">#0F6B5C</color>
+    <color name="luobo_on_primary">#FFFFFF</color>
+    <color name="luobo_primary_container">#A7F2E0</color>
+    <color name="luobo_on_primary_container">#00201A</color>
+    <color name="luobo_secondary">#4A635C</color>
+    <color name="luobo_on_secondary">#FFFFFF</color>
+    <color name="luobo_secondary_container">#DEE9DF</color>
+    <color name="luobo_on_secondary_container">#18221B</color>
+    <color name="luobo_surface">#F7FBF8</color>
+    <color name="luobo_surface_variant">#EAF4F0</color>
+    <color name="luobo_on_surface">#191C1B</color>
+    <color name="luobo_on_surface_variant">#5F6F6A</color>
+    <color name="luobo_outline">#D3E2DC</color>
+
+    <color name="status_green">#1B8A5A</color>
+    <color name="status_red">#C0392B</color>
+    <color name="status_amber">#B26A00</color>
+
+    <!-- 危险操作：红底白字 -->
+    <color name="danger">#C62828</color>
+    <color name="on_danger">#FFFFFF</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

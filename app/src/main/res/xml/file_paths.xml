@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 共享存储根目录：/storage/emulated/0/Luobo/... -->
+    <external-path
+        name="luobo_external"
+        path="Luobo/" />
+    <!-- 应用私有外部目录（未授予所有文件访问权限时的降级保存位置） -->
+    <external-files-path
+        name="luobo_app_external"
+        path="." />
+    <files-path
+        name="luobo_internal"
+        path="." />
+    <cache-path
+        name="luobo_cache"
+        path="." />
+</paths>

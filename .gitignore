@@ -1,0 +1,44 @@
+# ===== 密钥 / 本地配置（禁止提交）=====
+keystore/
+*.jks
+*.keystore
+*.p12
+keystore.properties
+local.properties
+.env
+.env.*
+*.token
+*.secret
+
+# ===== Android / Gradle =====
+.gradle/
+.kotlin/
+.idea/
+build/
+app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.iml
+*.apk.idsig
+
+# ===== 桌面端构建中间产物 =====
+desktop/dist/
+desktop/generated/
+desktop/build/
+*.pdb
+
+# ===== 运行数据与日志 =====
+Luobo/
+desktop/dist/Luobo/
+*.log
+
+# ===== 个人草稿 / 演示文件（不公开）=====
+hint.md
+.screenshots/
+*.pptx
+*.ppt
+
+# ===== 系统 =====
+.DS_Store
+Thumbs.db

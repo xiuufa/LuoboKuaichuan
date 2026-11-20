@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lobo.app.ui.SwipeActionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="64dp"
+    android:layout_marginHorizontal="6dp"
+    android:layout_marginVertical="3dp"
+    android:rotationX="2">
+
+    <!-- 信息条正文：高度随内容撑开，文件长名字不再被裁掉 -->
+    <LinearLayout
+        android:id="@+id/cardContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:background="@drawable/bg_board_card"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge"
+                android:paddingHorizontal="7dp"
+                android:paddingVertical="1dp"
+                android:text="@string/badge_text"
+                android:textColor="@color/luobo_on_primary_container"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textColor="@color/luobo_on_surface"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnRetry"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/action_retry"
+                android:src="@drawable/ic_refresh"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/btnPause"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/action_pause"
+                android:src="@drawable/ic_pause"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/btnCancel"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/action_stop_send"
+                android:src="@drawable/ic_close"
+                android:tint="@color/luobo_on_surface_variant"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/luobo_on_surface_variant"
+            android:textSize="11sp" />
+
+        <LinearLayout
+            android:id="@+id/progressRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:max="1000"
+                android:progressTint="@color/luobo_primary" />
+
+            <TextView
+                android:id="@+id/tvProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/luobo_on_surface_variant"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 左滑露出的动作按钮（宽度由 SwipeActionLayout 按 0.15*容器宽布局） -->
+    <LinearLayout
+        android:id="@+id/actionsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/action1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_resend"
+            android:padding="12dp"
+            android:src="@drawable/ic_refresh"
+            android:tint="@color/luobo_primary"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/action2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_open_location"
+            android:padding="12dp"
+            android:src="@drawable/ic_folder"
+            android:tint="@color/luobo_primary"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/action3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_delete_record"
+            android:padding="7dp"
+            android:src="@drawable/ic_delete_record"
+            android:tint="@color/danger"
+            android:visibility="gone" />
+    </LinearLayout>
+</com.lobo.app.ui.SwipeActionLayout>
