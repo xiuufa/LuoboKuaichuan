@@ -22,10 +22,7 @@ sha256sum -c SHA256SUMS.txt
 
 所有预编译包都在 [`release/`](release/) 目录，校验值见 [`release/SHA256SUMS.txt`](release/SHA256SUMS.txt)。
 
-> 仓库不包含任何签名密钥、Token 或本地配置。Android 正式包使用发布者自己的 keystore 签名。
-
-「萝卜快传」沿用 `com.lobo.app` 包名与品牌，但 HTTP 服务、传输板、网页端与桌面端均为重写实现：
-纯 HTTP + 原生网页，不依赖任何私有协议或外部服务。
+三端共用一套纯 HTTP + 原生网页实现，不依赖私有协议或外部服务：
 
 - **Android**：Kotlin，minSdk 26（Android 8.0+），前台服务常驻共享
 - **Windows / Linux**：C++17 单文件便携程序，内嵌网页与二维码
@@ -92,7 +89,7 @@ Windows / Linux（主机）      ─┼── HTTP API ── 共享传输板（
 # 需要 JDK 17+、Android SDK（compileSdk 37）
 ./gradlew :app:assembleRelease
 # 产物：app/build/outputs/apk/release/app-release-unsigned.apk
-# 使用你自己的 keystore 签名后再分发，仓库不包含签名密钥
+# 使用你自己的 keystore 签名后再分发
 ```
 
 调试安装：
@@ -145,7 +142,7 @@ python3 desktop/tools/make_icon.py   # 从 Android xxxhdpi 图标生成 PNG / IC
 ```
 app/                         Android 工程
   src/main/assets/web/       网页端（HTML/CSS/JS）
-  src/main/java/com/lobo/app/
+  src/main/java/             Kotlin 源码
     MainActivity.kt          共享 / 二维码 / 传输板 / 分享入口 / 上传队列
     data/                    传输板、HTTP 客户端、上传器、设置
     http/                    NanoHTTPD 服务、Range、二维码、静态资源
@@ -191,7 +188,6 @@ client.upload_file("./report.pdf", sender="python")
 - **只在局域网内通信**：不经过云端，不需要账号，不收集手机号 / 邮箱。
 - **文件留在本机**：Android 写入 `内部存储/Luobo`；桌面端写入指定数据目录。
 - **随时停止**：关闭共享或退出服务即释放端口；桌面端支持优雅关闭。
-- **仓库不含密钥**：`keystore/`、`*.jks`、`local.properties`、Token 均已加入 `.gitignore`。
 - **签名说明**：`release/` 中的 APK 由发布者签名；从源码构建的 APK 默认未签名。
 
 ## 兼容性
@@ -203,7 +199,6 @@ client.upload_file("./report.pdf", sender="python")
 
 ## 致谢
 
-- 网页端与 HTTP 服务骨架受 **Gazee** 项目启发，在其基础上重写为任意格式传输服务。
 - 依赖：[NanoHTTPD](https://github.com/NanoHttpd/nanohttpd)、[cpp-httplib](https://github.com/yhirose/cpp-httplib)、[nlohmann/json](https://github.com/nlohmann/json)、[qrcodegen](https://github.com/nayuki/QR-Code-generator)、ZXing。
 
 ## 许可证
